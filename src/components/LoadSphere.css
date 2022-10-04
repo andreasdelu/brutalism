@@ -1,0 +1,75 @@
+.loadingContainer{
+    perspective: 1000px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999999999999;
+    background-color: white;
+    animation: remove .1s 3.3s forwards;
+  }
+
+  @keyframes remove {
+    to{visibility: hidden;}
+  }
+  
+  #loadSphere{
+    transform-style: preserve-3d;
+    position: relative;
+    height: 60px;
+    width: 65px;
+    animation: spinLoad 10s linear infinite;
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+  
+  @keyframes spinLoad {
+    to{transform: rotateY(720deg) rotateX(360deg) rotateX(720deg);}
+  }
+  
+  .sphereLine{
+    background-color: transparent;
+    border: 2px solid rgb(93, 250, 255);
+    height: 60px;
+    width: 65px;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .progress{
+    width: 100px;
+    height: 10px;
+    background-color: #fff;
+    outline: 1px solid black;
+  }
+
+  .prog-val{
+    height: 100%;
+    width: 0%;
+    background-color: black;
+    animation: animLoad 3s steps(5, end) forwards;
+  }
+
+  @keyframes animLoad {
+    to{width: 100%}
+  }
+
+  @keyframes animText {
+    from{
+        width: 7ch;
+    }
+    to{
+        width: 11ch;
+    }
+  }
+
+  .loadingContainer p{
+    overflow: hidden;
+    width: 7ch;
+    animation: animText 3s steps(4, end) infinite;
+  }
+  

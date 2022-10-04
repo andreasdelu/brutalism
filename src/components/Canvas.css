@@ -1,0 +1,14 @@
+canvas{
+    height: calc(100vh - 80px);
+    aspect-ratio: 16/9;
+    position: sticky;
+    top: 80px;
+    display: block;
+}
+
+.canvasScrollContainer{
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
